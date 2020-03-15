@@ -3,7 +3,7 @@ class Api::V1::WishesController < ApplicationController
     before_action :set_category
 
     def index
-        @wishes = Wish.all 
+        @wishes = @category.wishes 
         render json: @wishes
     end
 
@@ -33,6 +33,6 @@ class Api::V1::WishesController < ApplicationController
     end
 
     def wish_params
-        params.require(:wish).permit(:category_id, :content, :fulfilled)
+        params.required(:wish).permit(:category_id, :content, :fulfilled)
     end
 end
