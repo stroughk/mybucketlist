@@ -1,9 +1,9 @@
 class Api::V1::WishesController < ApplicationController
 
-    before_action :set_account
-    
+    before_action :set_category
+
     def index
-        @wishes = @category.wishes 
+        @wishes = Wish.all 
         render json: @wishes
     end
 
@@ -28,8 +28,8 @@ class Api::V1::WishesController < ApplicationController
 
     private
 
-    def set_account
-        @category = Category.find(params[:category]) #any wish we have it's associated with a category, and we set it based on the category id
+    def set_category
+        @category = Category.find(params[:category_id]) #any wish we have it's associated with a category, and we set it based on the category id
     end
 
     def wish_params

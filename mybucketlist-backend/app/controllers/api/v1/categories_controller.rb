@@ -15,7 +15,7 @@ class Api::V1::CategoriesController < ApplicationController
     end
 
     def show
-        @category = Category.find(prams[:id])
+        @category = Category.find(params[:id])
         render json: @category
     end
 
