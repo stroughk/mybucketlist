@@ -1,17 +1,16 @@
 import React from "react";
+import  {connect} from 'react-redux';
+import {fetchCategories} from './actions/fetchCategories'
 
 class App extends React.Component {
 
-// componentDidMount() {
-//   fetch('http://localhost:3000/api/v1/categories/1')
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-// }
+  componentDidMount(){
+    this.props.fetchCategories({type: 'FETCH_CATEGORIES', payload: {name: 'Travel'}})
+  }
 
-
-  render() {
+render() {
     return <div className="App">App</div>;
   }
 }
 
-export default App;
+export default connect(null, {fetchCategories})(App);
