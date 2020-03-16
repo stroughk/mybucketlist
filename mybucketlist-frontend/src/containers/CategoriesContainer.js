@@ -1,6 +1,6 @@
 import React from "react";
 import  {connect} from 'react-redux';
-import {Route} from 'react-router-dom'; 
+import {Route, Switch} from 'react-router-dom'; 
 
 import {fetchCategories} from '../actions/fetchCategories';
 import Categories from "../components/Categories";
@@ -16,9 +16,11 @@ componentDidMount() {
   render() {
     return (
       <div>
+        <Switch>
         <Route path='/categories/new' component={CategoryInput} />
         <Route path='/categories/:id'render={(routerProps) => <CategoryShow {...routerProps} categories={this.props.categories}/>}/>
         <Route exact path='/categories' render={(routerProps) => <Categories {...routerProps} categories={this.props.categories}/>}/>
+        </Switch>
       </div>
     );
   }
