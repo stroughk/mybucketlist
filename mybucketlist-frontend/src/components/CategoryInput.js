@@ -15,6 +15,9 @@ class CategoryInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.createCategory(this.state)
+        this.setState({
+            name: ''
+        })
     }
 
 
