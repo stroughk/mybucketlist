@@ -14,7 +14,7 @@ componentDidMount() {
   render() {
     return (
       <div>
-        <CategoryInput />
+        <CategoryInput /><br/>
         <Categories categories={this.props.categories} />
       </div>
     );
