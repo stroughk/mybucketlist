@@ -2,10 +2,12 @@ import React from 'react'
 
 
 const Category = (props) => {
+
+    let category = props.categories[props.match.params.id -1]
     
     return (
         <li>
-            {props.category.name}
+            {category ? category.name : null}
         </li>
     )
 }
