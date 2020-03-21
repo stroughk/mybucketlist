@@ -9,9 +9,10 @@ const Wishes = props => {
   }
 
   return <div>
+    
     {props.wishes && props.wishes.map(wish =>
-    <li key={wish.id}>{wish.content}- {wish.fulfilled} <button onClick={() => handleDelete(wish)}>Delete</button></li>
-
+    <li key={wish.id}>{wish.content}- {wish.fulfilled}>
+    <button onClick={() => handleDelete(wish)}>Delete</button></li>
     )}</div>;
 };
 
