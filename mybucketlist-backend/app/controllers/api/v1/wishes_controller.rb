@@ -10,7 +10,7 @@ class Api::V1::WishesController < ApplicationController
     def create
         @wish = @category.wishes.new(wish_params)
         if @wish.save
-            render json: @wish
+            render json: @category
         else
             render json: {error: 'Sorry, please try again'}
         end

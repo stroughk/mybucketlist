@@ -6,7 +6,7 @@ class WishesContainer extends React.Component {
     render() {
         return (
             <div>
-                <WishInput />
+                <WishInput category={this.props.category} />
                 <Wishes wishes={this.props.category && this.props.category.wishes}/>
             </div>
         )
