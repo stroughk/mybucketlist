@@ -1,12 +1,14 @@
 import React from "react";
-import  {connect} from 'react-redux';
+
 import CategoriesContainer from './containers/CategoriesContainer';
+import MenuBar from './components/MenuBar';
 
 class App extends React.Component {
 
 render() {
     return (
     <div className="ui container">
+      <MenuBar />
        <CategoriesContainer />
       </div>
     )
