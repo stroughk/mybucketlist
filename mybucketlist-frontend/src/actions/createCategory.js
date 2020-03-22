@@ -6,7 +6,7 @@ export const createCategory = (data) => {
                 'Accept': 'application/json'
             },
              method: 'POST',
-             body: JSON.stringify(data) 
+             body: JSON.stringify({ category: { name: data } }) 
         })
         .then(response => response.json())
         .then(category => dispatch({type: 'CREATE_CATEGORY', payload: category}))
