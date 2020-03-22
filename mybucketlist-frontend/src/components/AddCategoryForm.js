@@ -1,12 +1,12 @@
 import React from 'react'
 
 const AddCategoryForm = ({ handleSubmit, handleChange}) => (
-  <div>
+  <div className="category">
     <form onSubmit={handleSubmit}>
-      <label>My Bucket List Category</label>
+      <h2>Add New Category</h2>
       <input
         type="text"
-        placeholder="Category Name"
+        placeholder="Enter category name"
         name="categoryName"
         onChange={handleChange}
       />

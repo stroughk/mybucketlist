@@ -1,27 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MenuBar = (props) => (
+const MenuBar = () => (
   <div className="menu-bar">
   <ul>
     <li className="active">
       <Link to="/">
         <i className="fa fa-home" aria-hidden="true"></i>
-        Home
+        &nbsp; Home
       </Link>
     </li>
 
     <li className="active">
       <Link to="/categories">
         <i className="fa fa-list" aria-hidden="true"></i>
-          View My Bucket List
+        &nbsp; View My Bucket List
       </Link>
     </li>
 
     <li className="active">
       <Link to ="/categories/new">
         <i className="fa fa-plus" aria-hidden="true"></i>
-          Add To My Bucket List
+          &nbsp; Add Category
       </Link>
     </li>
     
