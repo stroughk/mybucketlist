@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CategoryInput = ({ handleSubmit, handleChange}) => (
+const AddCategoryForm = ({ handleSubmit, handleChange}) => (
   <div>
     <form onSubmit={handleSubmit}>
       <label>My Bucket List Category</label>
@@ -10,9 +10,9 @@ const CategoryInput = ({ handleSubmit, handleChange}) => (
         name="categoryName"
         onChange={handleChange}
       />
-      <input type="submit" />
+      <input type="submit" value="Add" />
     </form>
   </div>
 );
 
-export default CategoryInput;
+export default AddCategoryForm;

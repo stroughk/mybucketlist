@@ -1,16 +1,13 @@
 import React from "react";
-import WishInput from "../components/WishInput";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+// import AddWishForm from "../components/AddWishForm";
 import Wishes from "../components/Wishes";
+import { deleteWish } from "../actions/deleteWish";
 
-class WishesContainer extends React.Component {
-  render() {
-    return (
-      <div>
-        <WishInput category={this.props.category} />
-        <Wishes wishes={this.props.category && this.props.category.wishes} />
-      </div>
-    );
-  }
-}
+const WishesContainer = ({wishes}) =>  wishes ? <Wishes wishes={wishes} deleteWish={deleteWish}/> : null 
 
-export default WishesContainer;
+const mapDispatchToProps = dispatch => bindActionCreators({ deleteWish }, dispatch);
+
+export default connect(null, mapDispatchToProps)(WishesContainer);

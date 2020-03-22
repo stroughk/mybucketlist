@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import CategoryInput from '../components/CategoryInput';
+import AddCategoryForm from '../components/AddCategoryForm';
 import { createCategory } from '../actions/createCategory';
 
-class CategoryInputContainer extends React.Component {
+class AddCategoryFormContainer extends React.Component {
   state = { categoryName: "" };
 
   handleChange = event => this.setState({ categoryName: event.target.value });
@@ -21,9 +21,9 @@ class CategoryInputContainer extends React.Component {
 
   render() {
     return(
-      <CategoryInput handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+      <AddCategoryForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
     );
   }
 }
 
-export default connect(null, { createCategory })(CategoryInputContainer);
+export default connect(null, { createCategory })(AddCategoryFormContainer);

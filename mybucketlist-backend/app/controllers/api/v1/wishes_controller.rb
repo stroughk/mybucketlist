@@ -25,7 +25,7 @@ class Api::V1::WishesController < ApplicationController
         @wish = Wish.find(params[:id])
         @category = Category.find(@wish.category_id)
         @wish.destroy
-        render json: category
+        render json: @category
     end
 
     private

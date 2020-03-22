@@ -1,15 +1,13 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-
-import WishesContainer from "../containers/WishesContainer";
-import Wishes from "./Wishes";
+import WishesContainer from "../containers/WishesContainer"
 
 const Category = ({ category, categories, match }) => {
   category = category || categories[match.params.id - 1];
+  const wishes = category.wishes; 
 
-  return (
+  return wishes ? (
     <div>
-      <button className="accordion">{category ? category.name : null}</button>
+      <button className="accordion">{category.name}</button>
       <div className="panel">
         <table id="wishes">
           <thead>
@@ -21,12 +19,12 @@ const Category = ({ category, categories, match }) => {
           </thead>
 
           <tbody>
-            <Wishes wishes={category.wishes}/>
+            <WishesContainer wishes={wishes} /> 
           </tbody>
         </table>
       </div>
     </div>
-  );
+  ) : null ;
 };
 
 export default Category;
