@@ -1,6 +1,6 @@
 export function deleteWish (wishId, categoryId) {
   return dispatch => {
-    return fetch(`${process.env.API_HOST}/api/v1/categories/${categoryId}/wishes/${wishId}`, { method: 'DELETE' })
+    return fetch(`http://localhost:3000/api/v1/categories/${categoryId}/wishes/${wishId}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(category =>
         dispatch({

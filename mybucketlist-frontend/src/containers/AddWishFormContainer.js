@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { addWish } from "../actions/addWish";
+import AddWishForm from "../components/AddWishForm";
 
 class AddWishFormContainer extends React.Component {
   state = {

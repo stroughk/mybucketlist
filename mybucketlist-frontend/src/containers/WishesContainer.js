@@ -6,7 +6,8 @@ import { bindActionCreators } from "redux";
 import Wishes from "../components/Wishes";
 import { deleteWish } from "../actions/deleteWish";
 
-const WishesContainer = ({wishes}) =>  wishes ? <Wishes wishes={wishes} deleteWish={deleteWish}/> : null 
+const WishesContainer = ({ wishes, categoryId }) => wishes ?
+  <Wishes wishes={wishes} categoryId={categoryId} deleteWish={deleteWish} /> : null 
 
 const mapDispatchToProps = dispatch => bindActionCreators({ deleteWish }, dispatch);
 

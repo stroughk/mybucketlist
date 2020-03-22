@@ -3,21 +3,14 @@ import React from "react";
 const AddWishForm = ({handleChange, handleSubmit}) => (
   <div>
     <form onSubmit={handleSubmit}>
-      <label>Wish Fulfilled</label>
-      <select
-        name="fulfilled"
-        onChange={handleChange}
-      >
-        <option>Fulfilled</option>
-        <option>Not fulfilled</option>
-      </select>
       <label>Add a wish</label>
       <input
         type="text"
         name="content"
         onChange={handleChange}
+        placeholder="Enter a new wish"
       />
-      <input type="submit" />
+      <input type="submit" value="Add"/>
     </form>
   </div>
 );

@@ -1,13 +1,25 @@
 import React from "react";
-import WishesContainer from "../containers/WishesContainer"
+import WishesContainer from "../containers/WishesContainer";
+import AddWishFormContainer from "../containers/AddWishFormContainer";
+
+const CategoryHeader = ({ category }) => (
+  <div className="categoryHeader">
+    <div className="addWishForm">
+      <span className="categoryTitle">{category.name}</span>
+      
+      <AddWishFormContainer category={category}/>
+    </div>
+     <hr />
+  </div>
+)
 
 const Category = ({ category, categories, match }) => {
   category = category || categories[match.params.id - 1];
   const wishes = category.wishes; 
 
-  return wishes ? (
+  return wishes.length > 0 ? (
     <div>
-      <button className="accordion">{category.name}</button>
+      <CategoryHeader category={category}/>
       <div className="panel">
         <table id="wishes">
           <thead>
@@ -19,12 +31,12 @@ const Category = ({ category, categories, match }) => {
           </thead>
 
           <tbody>
-            <WishesContainer wishes={wishes} /> 
+            <WishesContainer wishes={wishes} categoryId={category.id}/> 
           </tbody>
         </table>
       </div>
     </div>
-  ) : null ;
+  ) : <CategoryHeader category={category}/> ;
 };
 
 export default Category;

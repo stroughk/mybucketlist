@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import AddCategoryForm from '../components/AddCategoryForm';
 import { createCategory } from '../actions/createCategory';
 
-class AddCategoryFormContainer extends React.Component {
+class AddCategoryFormContainer extends React.Component {s
   state = { categoryName: "" };
 
   handleChange = event => this.setState({ categoryName: event.target.value });
