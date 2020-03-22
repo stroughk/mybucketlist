@@ -22,16 +22,16 @@ class Api::V1::WishesController < ApplicationController
     end
 
     def destroy
-        @wish = Wish.find(params[:id])
-        @category = Category.find(@wish.category_id)
-        @wish.destroy
-        render json: @category
+      wish = Wish.find_by_id(params[:id])
+      wish.destroy if wish 
+
+      render json: @category, status: :ok
     end
 
     private
 
     def set_category
-        @category = Category.find(params[:category_id]) #any wish we have it's associated with a category, and we set it based on the category id
+      @category = Category.find(params[:category_id]) #any wish we have it's associated with a category, and we set it based on the category id
     end
 
     def wish_params
