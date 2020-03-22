@@ -9,7 +9,6 @@ const CategoryHeader = ({ category }) => (
       
       <AddWishFormContainer category={category}/>
     </div>
-     <hr />
   </div>
 )
 
@@ -18,7 +17,7 @@ const Category = ({ category, categories, match }) => {
   const wishes = category.wishes; 
 
   return wishes.length > 0 ? (
-    <div>
+    <div className="category">
       <CategoryHeader category={category}/>
       <div className="panel">
         <table id="wishes">
@@ -36,7 +35,7 @@ const Category = ({ category, categories, match }) => {
         </table>
       </div>
     </div>
-  ) : <CategoryHeader category={category}/> ;
+  ) : <div className="category"><CategoryHeader category={category}/> No wishes</div> ;
 };
 
 export default Category;

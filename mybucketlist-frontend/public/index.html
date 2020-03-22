@@ -29,76 +29,34 @@
     -->
     <title>My BucketList</title>
 <style>
-    /* .accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-    
-    .active, .accordion:hover {
-      background-color: #ccc; 
-    }
-    
-    .panel {
-      padding: 0 18px;
-      display: none;
-      background-color: white;
-      overflow: hidden;
-    }
-    
-    #wishes {
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    #wishes td, #wishes th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    
-    #wishes tr:nth-child(even){background-color: #f2f2f2;}
-    
-    #wishes tr:hover {background-color: #ddd;}
-    
-    #wishes th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #4CAF50;
-      color: white;
-    }*/
+.category {
+  padding: 8px;
+  font-size: large;
+  font-family: Helvetica, sans-serif;
+  margin: 10px;
+  border-left: 4px solid grey;
+  color: whitesmoke;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #8d6e4d;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  width: 50%;
+}
+
+tr:hover {background-color:#eeeae5;}
+</style>
   </style>   
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <script type="text/javascript">
-    // window.addEventListener('load', function () {
-    //   var acc = document.getElementsByClassName("accordion");
-    //   var i;
-      
-    //   for (i = 0; i < acc.length; i++) {
-    //     acc[i].addEventListener("click", function() {
-    //       this.classList.toggle("active");
-    //       var panel = this.nextElementSibling;
-    //       if (panel.style.display === "block") {
-    //         panel.style.display = "none";
-    //       } else {
-    //         panel.style.display = "block";
-    //       }
-    //     });
-    //   }
-    // });
-    
-      </script>
   </body>
 </html>
