@@ -28,7 +28,7 @@ const MenuBar = (props) => (
       <div className="sub-menu-1">
         <ul>
           <li>
-            <Link to="/categories/new"k>Add a New Category</Link>
+            <Link to="/categories/new">Add a New Category</Link>
           </li>
           
           <li>

@@ -1,19 +1,10 @@
 import React from "react";
-import {connect} from 'react-redux';
-import {deleteWish} from '../actions/deleteWish';
+import { connect } from "react-redux";
+import { deleteWish } from "../actions/deleteWish";
+import { Wish } from "./Wish";
 
-const Wishes = props => {
+const Wishes = ({ wishes, deleteWish }) =>
+  wishes &&
+  wishes.map(wish => <Wish wish={wish} deleteWish={deleteWish} key={wish.id}/>);
 
-  const handleDelete = (wish) => {
-    props.deleteWish(wish.id, wish.transaction_id)
-  }
-
-  return <div>
-    
-    {props.wishes && props.wishes.map(wish =>
-    <li key={wish.id}>{wish.content}- {wish.fulfilled}>
-    <button onClick={() => handleDelete(wish)}>Delete</button></li>
-    )}</div>;
-};
-
-export default connect(null, {deleteWish})(Wishes)
+export default connect(null, { deleteWish })(Wishes);
