@@ -14,14 +14,14 @@ export default function categoryReducer(state = { categories: [] }, action) {
       })
       return { ...state, categories: categories };
       case 'DELETE_WISH':
-        const { categoryId, wishId } = action.payload;
-        return categories.map(category => {
-          if (category.id !== categoryId ) { return category; }
-          
-          const { wishes } = category; 
-          category.wishes = wishes.filter(wish => wish.id !== wishId );;
-          return category;
-        });
+        let newCategories = state.categories.map(category => {
+          if (category.id === action.payload.id) {
+            return action.payload;
+          } else {
+            return category;
+          }
+        })
+        return { ...state, categories: newCategories };
     default:
       return state;
   }
