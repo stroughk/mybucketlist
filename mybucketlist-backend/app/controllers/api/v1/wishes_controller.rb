@@ -16,6 +16,14 @@ class Api::V1::WishesController < ApplicationController
         end
     end
 
+    def update
+      wish = Wish.find(params[:id])
+      wish.fulfilled = params[:fulfilled]
+      wish.save
+      
+      render json: wish.category, status: :ok
+    end
+
     def show
       @wish = Wish.find(params[:id])
       render json: @wish 

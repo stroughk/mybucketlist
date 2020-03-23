@@ -5,6 +5,7 @@ export default function categoryReducer(state = { categories: [] }, action) {
     case "CREATE_CATEGORY":
       return { ...state, categories: [...state.categories, action.payload] };
     case "ADD_WISH":
+    case "UPDATE_WISH":
       let categories = state.categories.map(category => {
         if (category.id === action.payload.id) {
           return action.payload;
