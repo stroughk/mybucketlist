@@ -20,8 +20,10 @@ class AddCategoryFormContainer extends React.Component {s
   };
 
   render() {
-    return(
-      <AddCategoryForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+    const { categoryName } = this.state;
+
+    return (
+      <AddCategoryForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} value={categoryName}/>
     );
   }
 }

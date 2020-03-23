@@ -26,8 +26,10 @@ class AddWishFormContainer extends React.Component {
   };
 
   render() {
+    const { content } = this.state;
+
     return(
-      <AddWishForm handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+      <AddWishForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={content}/>
     )
   }
 }
